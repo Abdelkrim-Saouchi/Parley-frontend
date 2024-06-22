@@ -10,11 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@iconify-json/ic": "^1.1.17",
+    "@iconify-json/iconamoon": "^1.1.4",
+    "@iconify-json/lucide": "^1.1.194",
+    "@iconify-json/material-symbols": "^1.1.82",
+    "@iconify-json/mingcute": "^1.1.18",
+    "framer-motion": "^11.2.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
+    "@iconify/tailwind": "^1.1.1",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
