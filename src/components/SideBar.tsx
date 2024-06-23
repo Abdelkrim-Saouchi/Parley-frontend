@@ -47,7 +47,7 @@ const SideBar = () => {
       variants={menuVariants}
       animate={menuControls}
       initial="close"
-      className="z-20 flex min-h-dvh w-[128px] flex-col bg-primary p-8 text-background shadow-2xl shadow-black"
+      className="absolute z-20 flex min-h-dvh w-[128px] flex-col bg-primary p-8 text-background shadow-2xl shadow-black"
     >
       <Link to="/" className="flex items-center gap-4">
         <img src={parleyLogo} className="size-16" />
