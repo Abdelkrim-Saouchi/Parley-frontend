@@ -1,16 +1,13 @@
-import FriendList from "./FriendList";
+import HistoryPage from "../pages/HistoryPage";
 import Header from "./Header";
 import SideBar from "./SideBar";
 
 const Layout = () => {
   return (
     <>
-      <SideBar />
       <Header />
-
-      <main className="text-inter ml-[128px]">
-        <FriendList />
-      </main>
+      <SideBar />
+      <HistoryPage />
     </>
   );
 };

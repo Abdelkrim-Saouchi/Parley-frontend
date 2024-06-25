@@ -133,7 +133,7 @@ const FriendList = () => {
   ];
   return (
     <div className="bg-primary px-16 py-2">
-      <h2 className="mb-4 text-2xl font-bold text-background">Friends</h2>
+      <h2 className="mb-2 text-2xl font-bold text-background">Friends</h2>
       <div className="flex items-center gap-4">
         <div className="scrollbar scrollbar-track scrollbar-thumb flex items-center gap-4 overflow-x-auto rounded-[120px] p-1 py-4 md:overflow-hidden md:hover:overflow-x-auto">
           {friends.map((friend, index) => (

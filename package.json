@@ -10,10 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@iconify-json/bx": "^1.1.10",
     "@iconify-json/hugeicons": "^1.1.0",
     "@iconify-json/ic": "^1.1.17",
+    "@iconify-json/icon-park-solid": "^1.1.14",
     "@iconify-json/iconamoon": "^1.1.4",
+    "@iconify-json/iconoir": "^1.1.44",
     "@iconify-json/lucide": "^1.1.194",
+    "@iconify-json/majesticons": "^1.1.11",
     "@iconify-json/material-symbols": "^1.1.82",
     "@iconify-json/mingcute": "^1.1.18",
     "framer-motion": "^11.2.11",
