@@ -15,7 +15,7 @@ const ContactHistoryComp = ({
 }: ContactHistoryCompProps) => {
   return (
     <NavLink
-      to="/1"
+      to="/history/1"
       className="flex items-center gap-6 rounded-xl p-4 text-lg hover:bg-secondary/10"
     >
       <img

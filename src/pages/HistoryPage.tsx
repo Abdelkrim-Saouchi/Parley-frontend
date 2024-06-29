@@ -1,13 +1,13 @@
-import HistoryChatWindow from "../components/HistoryChatWindow";
 import FriendList from "../components/FriendList";
 import ConversationHistory from "../components/ConversationHistory";
+import { Outlet } from "react-router-dom";
 const HistoryPage = () => {
   return (
-    <main className="text-inter ml-[128px] bg-background text-primary">
+    <main className="text-inter ml-[128px] min-h-dvh bg-background text-primary">
       <FriendList />
       <div className="flex">
         <ConversationHistory />
-        <HistoryChatWindow />
+        <Outlet />
       </div>
     </main>
   );

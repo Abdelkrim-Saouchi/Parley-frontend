@@ -38,19 +38,31 @@ const ConversationHistory = () => {
       message: "Hi Doctor!",
     },
   ];
+
   return (
     <div className="flex-1 px-16 py-4 text-2xl font-bold">
       <h2>Conversation History</h2>
       <div className="flex flex-col py-4"></div>
-      {contacts.map((contact, index) => (
-        <ContactHistoryComp
-          key={index}
-          imgSrc={contact.imgSrc}
-          fullName={contact.fullName}
-          timeStamp={contact.timeStamp}
-          message={contact.message}
-        />
-      ))}
+
+      {contacts.length === 0 && (
+        <div>
+          <p className="text-lg text-secondary/70">
+            No conversation was found.
+          </p>
+          <span className="icon-[fluent--chat-off-20-regular] size-36 text-secondary/70"></span>
+        </div>
+      )}
+
+      {contacts.length > 0 &&
+        contacts.map((contact, index) => (
+          <ContactHistoryComp
+            key={index}
+            imgSrc={contact.imgSrc}
+            fullName={contact.fullName}
+            timeStamp={contact.timeStamp}
+            message={contact.message}
+          />
+        ))}
     </div>
   );
 };

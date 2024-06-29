@@ -136,21 +136,33 @@ const FriendList = () => {
       <h2 className="mb-2 text-2xl font-bold text-background">Friends</h2>
       <div className="flex items-center gap-4">
         <div className="scrollbar scrollbar-track scrollbar-thumb flex items-center gap-4 overflow-x-auto rounded-[120px] p-1 py-4 md:overflow-hidden md:hover:overflow-x-auto">
-          {friends.map((friend, index) => (
-            <FriendComp
-              key={index}
-              url={friend.url}
-              src={friend.src}
-              online={friend.online}
-            />
-          ))}
+          {friends.length === 0 && (
+            <div className="flex gap-4 text-lg text-background">
+              <p>You do not have friends yet.</p>
+              <Link to="/search" className="text-accent hover:underline">
+                Find someone
+              </Link>
+            </div>
+          )}
+          {friends.length > 0 &&
+            friends.map((friend, index) => (
+              <FriendComp
+                key={index}
+                url={friend.url}
+                src={friend.src}
+                online={friend.online}
+              />
+            ))}
         </div>
-        <Link
-          to="#"
-          className="ml-4 text-nowrap text-lg font-semibold text-accent-lighten"
-        >
-          See All
-        </Link>
+
+        {friends.length > 0 && (
+          <Link
+            to="#"
+            className="ml-4 text-nowrap text-lg font-semibold text-accent-lighten"
+          >
+            See All
+          </Link>
+        )}
       </div>
     </div>
   );
