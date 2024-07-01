@@ -2,7 +2,10 @@ import LeftedMessage from "./LeftedMessage";
 import RightedMessage from "./RightedMessage";
 import profile from "../assets/profile.jpg";
 import f1 from "../assets/aiony-haust-3TLl_97HNJo-unsplash.jpg";
+import { useNavigate } from "react-router-dom";
 const HistoryChatWindow = () => {
+  const navigate = useNavigate();
+
   const messages = [
     {
       imgSrc: f1,
@@ -29,9 +32,14 @@ const HistoryChatWindow = () => {
       isUser: true,
     },
   ];
+
   return (
-    <div className="flex-1 border-l border-secondary">
+    <div className="absolute inset-0 z-30 flex-1 border-l border-secondary bg-background xl:relative">
       <div className="flex items-center justify-between border-b border-secondary py-6 pl-8 pr-16">
+        <button onClick={() => navigate(-1)} className="xl:hidden">
+          <span className="icon-[material-symbols--arrow-left-alt] size-12"></span>
+        </button>
+
         <div className="flex items-center gap-8 text-2xl">
           <img src={f1} className="size-20 rounded-full" />
           <div>

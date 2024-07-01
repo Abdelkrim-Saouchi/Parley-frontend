@@ -5,7 +5,7 @@ const HistoryPage = () => {
   return (
     <main className="text-inter ml-[128px] min-h-dvh bg-background text-primary">
       <FriendList />
-      <div className="flex">
+      <div className="relative flex">
         <ConversationHistory />
         <Outlet />
       </div>
