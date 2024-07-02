@@ -6,6 +6,7 @@ import Layout from "./components/Layout.tsx";
 import HistoryPage from "./pages/HistoryPage.tsx";
 import HistoryChatWindow from "./components/HistoryChatWindow.tsx";
 import Profile from "./pages/Profile.tsx";
+import VisitProfile from "./pages/VisitProfile.tsx";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile />,
+      },
+      {
+        path: "/profiles/:id",
+        element: <VisitProfile />,
       },
     ],
   },

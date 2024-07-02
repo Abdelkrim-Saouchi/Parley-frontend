@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import profile from "../assets/profile.jpg";
 import { motion, useAnimationControls } from "framer-motion";
+import PictureAndInfo from "../components/PictureAndInfo";
 
 const arrowVariants = {
   open: {
@@ -38,20 +38,7 @@ const Profile = () => {
   return (
     <main className="text-inter min-h-dvh bg-background px-4 py-2 text-lg text-primary md:ml-[128px] md:pl-24 md:pr-16">
       <form className="flex w-fit flex-col gap-16 px-4">
-        <div className="flex flex-col flex-wrap items-center justify-center gap-8 md:flex-row md:justify-start md:gap-32">
-          <div className="relative">
-            <img src={profile} className="size-48 rounded-full" />
-            <button className="absolute bottom-0 right-0">
-              <span className="icon-[bxs--image-add] size-8"></span>
-            </button>
-          </div>
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold">Krimothazine</h2>
-            <p className="text-center text-secondary/80 md:text-start">
-              Algiers, Algeria
-            </p>
-          </div>
-        </div>
+        <PictureAndInfo />
 
         <div className="space-y-4">
           <h3 className="font-bold">Personal informations</h3>
