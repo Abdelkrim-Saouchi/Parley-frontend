@@ -36,9 +36,9 @@ const Profile = () => {
   }, [arrowControls, passwordControls, isOpen]);
 
   return (
-    <main className="text-inter min-h-dvh bg-background px-4 py-2 text-lg text-primary md:ml-[128px] md:pl-24">
-      <form className="flex w-fit flex-col gap-16">
-        <div className="flex items-center gap-32">
+    <main className="text-inter min-h-dvh bg-background px-4 py-2 text-lg text-primary md:ml-[128px] md:pl-24 md:pr-16">
+      <form className="flex w-fit flex-col gap-16 px-4">
+        <div className="flex flex-col flex-wrap items-center justify-center gap-8 md:flex-row md:justify-start md:gap-32">
           <div className="relative">
             <img src={profile} className="size-48 rounded-full" />
             <button className="absolute bottom-0 right-0">
@@ -47,14 +47,16 @@ const Profile = () => {
           </div>
           <div className="space-y-4">
             <h2 className="text-2xl font-bold">Krimothazine</h2>
-            <p className="text-secondary/80">Algiers, Algeria</p>
+            <p className="text-center text-secondary/80 md:text-start">
+              Algiers, Algeria
+            </p>
           </div>
         </div>
 
         <div className="space-y-4">
           <h3 className="font-bold">Personal informations</h3>
-          <div className="flex items-center gap-16">
-            <div className="flex flex-col gap-1 md:min-w-96">
+          <div className="flex flex-wrap items-center gap-16">
+            <div className="flex grow flex-col gap-1 xl:min-w-96">
               <label htmlFor="name">Full name</label>
               <input
                 type="text"
@@ -62,7 +64,7 @@ const Profile = () => {
                 className="border border-secondary bg-transparent p-4 outline-accent"
               />
             </div>
-            <div className="flex flex-col gap-1 md:min-w-96">
+            <div className="flex grow flex-col gap-1 xl:min-w-96">
               <label htmlFor="location">Location</label>
               <input
                 type="text"
@@ -94,9 +96,9 @@ const Profile = () => {
             initial="close"
             variants={passwordVariants}
             animate={passwordControls}
-            className="flex items-center gap-16"
+            className="flex flex-wrap items-center gap-16"
           >
-            <div className="flex flex-col gap-1 md:min-w-96">
+            <div className="flex grow flex-col gap-1 xl:min-w-96">
               <label htmlFor="password">New Password</label>
               <input
                 type="password"
@@ -104,7 +106,7 @@ const Profile = () => {
                 className="border border-secondary bg-transparent p-4 outline-accent"
               />
             </div>
-            <div className="flex flex-col gap-1 md:min-w-96">
+            <div className="flex grow flex-col gap-1 xl:min-w-96">
               <label htmlFor="confirmation">Confirmation</label>
               <input
                 type="password"
@@ -114,7 +116,7 @@ const Profile = () => {
             </div>
           </motion.div>
         </div>
-        <button className="self-center rounded-full bg-accent px-32 py-4 font-bold text-background">
+        <button className="mb-6 self-center rounded-full bg-accent px-8 py-4 font-bold text-background md:px-32 md:py-4">
           Save Changes
         </button>
       </form>
