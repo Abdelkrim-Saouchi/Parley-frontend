@@ -63,7 +63,10 @@ const SideBar = () => {
             className="icon-[mingcute--arrow-right-fill] size-12 min-w-12"
           ></motion.span>
         </button>
-        <NavLink to="#" className="flex items-center gap-4 text-lg font-bold">
+        <NavLink
+          to="/profile"
+          className="flex items-center gap-4 text-lg font-bold"
+        >
           <span className="icon-[iconamoon--profile-circle-fill] size-12 min-w-12"></span>
           <p className="overflow-hidden">Profile</p>
         </NavLink>
