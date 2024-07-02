@@ -20,14 +20,14 @@ const ContactHistoryComp = ({
     >
       <img
         src={imgSrc}
-        className="size-28 rounded-full object-cover object-center"
+        className="size-16 rounded-full object-cover object-center md:size-28"
       />
       <div className="grow space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col justify-between gap-3 md:flex-row md:items-center">
           <h3 className="text-lg font-bold">{fullName}</h3>
           <p className="text-sm text-secondary/85">{timeStamp}</p>
         </div>
-        <p className="text-sm text-secondary/85">{message}</p>
+        <p className="hidden text-sm text-secondary/85 md:block">{message}</p>
       </div>
     </NavLink>
   );

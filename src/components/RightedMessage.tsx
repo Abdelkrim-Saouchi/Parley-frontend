@@ -15,7 +15,7 @@ const RightedMessage = ({
         </p>
         <p className="self-end text-sm text-secondary">Sent {timeStamp}</p>
       </div>
-      <img src={imgSrc} className="size-20 rounded-full" />
+      <img src={imgSrc} className="size-11 rounded-full md:size-20" />
     </div>
   );
 };

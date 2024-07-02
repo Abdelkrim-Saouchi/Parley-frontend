@@ -40,9 +40,8 @@ const ConversationHistory = () => {
   ];
 
   return (
-    <div className="flex-1 px-16 py-4 text-2xl font-bold">
+    <div className="mx-4 my-4 flex-1 border border-secondary p-3 text-2xl font-bold md:m-0 md:border-none md:px-16 md:py-4">
       <h2>Conversation History</h2>
-      <div className="flex flex-col py-4"></div>
 
       {contacts.length === 0 && (
         <div>

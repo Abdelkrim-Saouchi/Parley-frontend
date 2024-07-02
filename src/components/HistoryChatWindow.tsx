@@ -35,21 +35,23 @@ const HistoryChatWindow = () => {
 
   return (
     <div className="absolute inset-0 z-30 flex-1 border-l border-secondary bg-background xl:relative">
-      <div className="flex items-center justify-between border-b border-secondary py-6 pl-8 pr-16">
+      <div className="flex items-center justify-between border-b border-secondary px-4 py-6 md:pl-8 md:pr-16">
         <button onClick={() => navigate(-1)} className="xl:hidden">
-          <span className="icon-[material-symbols--arrow-left-alt] size-12"></span>
+          <span className="icon-[material-symbols--arrow-left-alt] size-8 md:size-12"></span>
         </button>
 
         <div className="flex items-center gap-8 text-2xl">
-          <img src={f1} className="size-20 rounded-full" />
-          <div>
-            <h3 className="font-bold">Saouchi Abdelkrim</h3>
+          <img src={f1} className="hidden size-20 rounded-full md:block" />
+          <div className="text-center md:text-start">
+            <h3 className="text-xl font-bold md:text-inherit">
+              Saouchi Abdelkrim
+            </h3>
             <p className="text-lg text-secondary/85">active 2h</p>
           </div>
         </div>
-        <span className="icon-[icon-park-solid--setting] block size-8"></span>
+        <span className="icon-[icon-park-solid--setting] block size-7 md:size-8"></span>
       </div>
-      <div className="py-6 pl-8 pr-16">
+      <div className="bg-background px-4 py-6 md:pl-8 md:pr-16">
         <div className="flex flex-col gap-4">
           {messages.map((message, index) => {
             if (message.isUser) {
@@ -74,22 +76,22 @@ const HistoryChatWindow = () => {
           })}
         </div>
 
-        <div className="mt-4 flex items-center gap-4 text-lg">
-          <div className="flex grow items-center gap-4 rounded-full border-2 border-secondary p-2">
+        <div className="mt-4 flex items-center gap-4">
+          <div className="flex grow items-center gap-2 rounded-full border-2 border-secondary p-2 md:gap-4">
             <button>
-              <span className="icon-[iconoir--emoji] size-12"></span>
+              <span className="icon-[iconoir--emoji] size-7 md:size-12"></span>
             </button>
             <input
               type="text"
               placeholder="Message"
-              className="grow bg-transparent outline-none"
+              className="w-full grow bg-transparent outline-none"
             />
           </div>
           <button>
-            <span className="icon-[bx--image-add] size-12"></span>
+            <span className="icon-[bx--image-add] size-7 md:size-12"></span>
           </button>
           <button>
-            <span className="icon-[majesticons--send] size-12 text-accent"></span>
+            <span className="icon-[majesticons--send] size-7 text-accent md:size-12"></span>
           </button>
         </div>
       </div>
