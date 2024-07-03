@@ -59,7 +59,14 @@ const MobileMenu = ({
           <span className="icon-[hugeicons--notification-01] size-8"></span>
           <p>Notifications</p>
         </NavLink>
-        <NavLink to="#" className="flex items-center gap-4 text-lg font-bold">
+        <NavLink
+          to="/profiles/:id"
+          className={({ isActive, isPending }) =>
+            isActive || isPending
+              ? "flex items-center gap-4 text-lg font-bold text-accent"
+              : "flex items-center gap-4 text-lg font-bold"
+          }
+        >
           <span className="icon-[iconamoon--profile-circle-fill] size-8"></span>
           <p>Profile</p>
         </NavLink>
@@ -74,7 +81,14 @@ const MobileMenu = ({
           <span className="icon-[ic--twotone-history] size-8"></span>
           <p>History</p>
         </NavLink>
-        <NavLink to="#" className="flex items-center gap-4 text-lg font-bold">
+        <NavLink
+          to="/search"
+          className={({ isActive, isPending }) =>
+            isActive || isPending
+              ? "flex items-center gap-4 text-lg font-bold text-accent"
+              : "flex items-center gap-4 text-lg font-bold"
+          }
+        >
           <span className="icon-[material-symbols--person-search-outline-rounded] size-8"></span>
           <p>Search</p>
         </NavLink>

@@ -85,7 +85,14 @@ const SideBar = () => {
           <span className="icon-[ic--twotone-history] size-12 min-w-12"></span>
           <p className="overflow-hidden">History</p>
         </NavLink>
-        <NavLink to="#" className="flex items-center gap-4 text-lg font-bold">
+        <NavLink
+          to="/search"
+          className={({ isActive, isPending }) =>
+            isActive || isPending
+              ? "flex items-center gap-4 text-lg font-bold text-accent"
+              : "flex items-center gap-4 text-lg font-bold"
+          }
+        >
           <span className="icon-[material-symbols--person-search-outline-rounded] size-12 min-w-12"></span>
           <p className="overflow-hidden">Search</p>
         </NavLink>

@@ -7,6 +7,7 @@ import HistoryPage from "./pages/HistoryPage.tsx";
 import HistoryChatWindow from "./components/HistoryChatWindow.tsx";
 import Profile from "./pages/Profile.tsx";
 import VisitProfile from "./pages/VisitProfile.tsx";
+import Search from "./pages/Search.tsx";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/profiles/:id",
         element: <VisitProfile />,
+      },
+      {
+        path: "/search",
+        element: <Search />,
       },
     ],
   },
