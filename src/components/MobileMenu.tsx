@@ -41,7 +41,7 @@ const MobileMenu = ({
       variants={menuVariants}
       animate={menuControls}
       initial="close"
-      className="fixed top-0 z-20 flex min-h-dvh w-[300px] flex-col bg-primary text-background shadow-2xl shadow-black md:hidden"
+      className="fixed top-0 z-20 flex min-h-dvh w-[300px] flex-col bg-primary text-background md:hidden md:shadow-2xl md:shadow-black"
     >
       <Link
         to="/"
