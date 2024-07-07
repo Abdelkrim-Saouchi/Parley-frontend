@@ -44,16 +44,16 @@ const Search = () => {
   ];
 
   return (
-    <main className="text-inter min-h-dvh bg-background px-4 py-2 text-lg text-primary md:ml-[128px] md:pl-24 md:pr-16">
-      <h2 className="mb-8 text-3xl font-bold">
+    <main className="text-inter min-h-dvh bg-background px-5 py-2 text-lg text-primary md:ml-[128px] md:pl-24 md:pr-16">
+      <h2 className="mb-8 text-3xl font-bold md:text-2xl">
         Explore Parley, search People and Groups
       </h2>
-      <div className="flex w-5/6 items-center gap-6">
+      <div className="flex items-center gap-6 md:w-5/6">
         <div className="flex grow items-center gap-3 rounded-3xl bg-accent px-3 text-background shadow-lg has-[:focus]:outline has-[:focus]:outline-secondary">
           <span className="icon-[material-symbols--search] size-10"></span>
           <input
             type="search"
-            placeholder="Type your search here"
+            placeholder="Type search"
             className="h-full w-full bg-transparent p-3 outline-none placeholder:font-bold placeholder:text-background"
           />
         </div>
@@ -64,9 +64,9 @@ const Search = () => {
           <span className="icon-[lets-icons--group-fill] size-10"></span>
         </button>
       </div>
-      <h3 className="mb-8 mt-8 text-xl font-bold">Results</h3>
+      <h3 className="mb-8 mt-8 text-xl font-bold md:text-lg">Results</h3>
 
-      <div className="grid w-5/6 grid-cols-3 grid-rows-2 gap-8 gap-x-16">
+      <div className="grid grid-cols-3 grid-rows-2 gap-8 gap-x-16 max-[1330px]:grid-cols-2 max-[980px]:grid-cols-1 md:w-5/6">
         {results.length === 0 && (
           <div>
             <p className="text-secondary/85">No results found</p>
