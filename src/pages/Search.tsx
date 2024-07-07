@@ -45,7 +45,7 @@ const Search = () => {
 
   return (
     <main className="text-inter min-h-dvh bg-background px-5 py-2 text-lg text-primary md:ml-[128px] md:pl-24 md:pr-16">
-      <h2 className="mb-8 text-3xl font-bold md:text-2xl">
+      <h2 className="mb-8 text-2xl font-bold md:text-3xl">
         Explore Parley, search People and Groups
       </h2>
       <div className="flex items-center gap-6 md:w-5/6">
