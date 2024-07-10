@@ -1,11 +1,10 @@
-import LeftedMessage from "./LeftedMessage";
-import RightedMessage from "./RightedMessage";
 import profile from "../assets/profile.jpg";
 import f1 from "../assets/aiony-haust-3TLl_97HNJo-unsplash.jpg";
-import { useNavigate } from "react-router-dom";
-const HistoryChatWindow = () => {
-  const navigate = useNavigate();
+import ChatFriendBar from "./ChatFriendBar";
+import MessagingTool from "./MessagingTool";
+import Messages from "./Messages";
 
+const HistoryChatWindow = () => {
   const messages = [
     {
       imgSrc: f1,
@@ -35,65 +34,10 @@ const HistoryChatWindow = () => {
 
   return (
     <div className="absolute inset-0 z-30 flex-1 border-l border-secondary bg-background xl:relative">
-      <div className="flex items-center justify-between border-b border-secondary px-4 py-6 md:pl-8 md:pr-16">
-        <button onClick={() => navigate(-1)} className="xl:hidden">
-          <span className="icon-[material-symbols--arrow-left-alt] size-8 md:size-12"></span>
-        </button>
-
-        <div className="flex items-center gap-8 text-2xl">
-          <img src={f1} className="hidden size-20 rounded-full md:block" />
-          <div className="text-center md:text-start">
-            <h3 className="text-xl font-bold md:text-inherit">
-              Saouchi Abdelkrim
-            </h3>
-            <p className="text-lg text-secondary/85">active 2h</p>
-          </div>
-        </div>
-        <span className="icon-[icon-park-solid--setting] block size-7 md:size-8"></span>
-      </div>
+      <ChatFriendBar />
       <div className="bg-background px-4 py-6 md:pl-8 md:pr-16">
-        <div className="flex flex-col gap-4">
-          {messages.map((message, index) => {
-            if (message.isUser) {
-              return (
-                <RightedMessage
-                  key={index}
-                  imgSrc={message.imgSrc}
-                  message={message.message}
-                  timeStamp={message.timeStamp}
-                />
-              );
-            } else {
-              return (
-                <LeftedMessage
-                  key={index}
-                  imgSrc={message.imgSrc}
-                  message={message.message}
-                  timeStamp={message.timeStamp}
-                />
-              );
-            }
-          })}
-        </div>
-
-        <div className="mt-4 flex items-center gap-4">
-          <div className="flex grow items-center gap-2 rounded-full border-2 border-secondary p-2 md:gap-4">
-            <button>
-              <span className="icon-[iconoir--emoji] size-7 md:size-12"></span>
-            </button>
-            <input
-              type="text"
-              placeholder="Message"
-              className="w-full grow bg-transparent outline-none"
-            />
-          </div>
-          <button>
-            <span className="icon-[bx--image-add] size-7 md:size-12"></span>
-          </button>
-          <button>
-            <span className="icon-[majesticons--send] size-7 text-accent md:size-12"></span>
-          </button>
-        </div>
+        <Messages messages={messages} />
+        <MessagingTool />
       </div>
     </div>
   );
