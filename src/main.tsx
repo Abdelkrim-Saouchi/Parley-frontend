@@ -8,6 +8,7 @@ import HistoryChatWindow from "./components/HistoryChatWindow.tsx";
 import Profile from "./pages/Profile.tsx";
 import VisitProfile from "./pages/VisitProfile.tsx";
 import Search from "./pages/Search.tsx";
+import ChatWindowPage from "./pages/ChatWindowPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -29,12 +30,16 @@ const router = createBrowserRouter([
         element: <Profile />,
       },
       {
-        path: "/profiles/:id",
+        path: "/profiles/:id/",
         element: <VisitProfile />,
       },
       {
         path: "/search",
         element: <Search />,
+      },
+      {
+        path: "/conversations/:id",
+        element: <ChatWindowPage />,
       },
     ],
   },

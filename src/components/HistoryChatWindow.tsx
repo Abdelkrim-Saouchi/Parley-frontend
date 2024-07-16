@@ -34,7 +34,7 @@ const HistoryChatWindow = () => {
 
   return (
     <div className="absolute inset-0 z-30 flex-1 border-l border-secondary bg-background xl:relative">
-      <ChatFriendBar />
+      <ChatFriendBar isHistoryChat={true} />
       <div className="bg-background px-4 py-6 md:pl-8 md:pr-16">
         <Messages messages={messages} />
         <MessagingTool />

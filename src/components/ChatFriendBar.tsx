@@ -1,10 +1,19 @@
 import { useNavigate } from "react-router-dom";
 import f1 from "../assets/aiony-haust-3TLl_97HNJo-unsplash.jpg";
-const ChatFriendBar = () => {
+const ChatFriendBar = ({ isHistoryChat }: { isHistoryChat: boolean }) => {
   const navigate = useNavigate();
   return (
-    <div className="flex items-center justify-between border-b border-secondary px-4 py-6 md:pl-8 md:pr-16">
-      <button onClick={() => navigate(-1)} className="xl:hidden">
+    <div
+      className={
+        isHistoryChat
+          ? "flex items-center justify-between border-b border-secondary px-4 py-6 md:pl-8 md:pr-16"
+          : "flex items-center justify-between border-b border-secondary px-4 py-6 md:border-none md:pl-8 md:pr-16"
+      }
+    >
+      <button
+        onClick={() => navigate(-1)}
+        className={isHistoryChat ? "xl:hidden" : "md:hidden"}
+      >
         <span className="icon-[material-symbols--arrow-left-alt] size-8 md:size-12"></span>
       </button>
 
@@ -17,7 +26,13 @@ const ChatFriendBar = () => {
           <p className="text-lg text-secondary/85">active 2h</p>
         </div>
       </div>
-      <span className="icon-[icon-park-solid--setting] block size-7 md:size-8"></span>
+      <span
+        className={
+          isHistoryChat
+            ? "icon-[icon-park-solid--setting] block size-7 md:size-8"
+            : "icon-[icon-park-solid--setting] block size-7 md:hidden md:size-8"
+        }
+      ></span>
     </div>
   );
 };
