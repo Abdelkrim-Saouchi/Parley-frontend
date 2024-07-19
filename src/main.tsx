@@ -9,8 +9,18 @@ import Profile from "./pages/Profile.tsx";
 import VisitProfile from "./pages/VisitProfile.tsx";
 import Search from "./pages/Search.tsx";
 import ChatWindowPage from "./pages/ChatWindowPage.tsx";
+import Signup from "./pages/Singup.tsx";
+import Login from "./pages/Login.tsx";
 
 const router = createBrowserRouter([
+  {
+    path: "/signup",
+    element: <Signup />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
   {
     path: "/",
     element: <Layout />,
