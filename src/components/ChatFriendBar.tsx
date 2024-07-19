@@ -1,13 +1,40 @@
 import { useNavigate } from "react-router-dom";
 import f1 from "../assets/aiony-haust-3TLl_97HNJo-unsplash.jpg";
+import { motion, useAnimationControls } from "framer-motion";
+import { useEffect, useState } from "react";
+
+const settingVariants = {
+  open: {
+    display: "block",
+    scaleY: 1,
+    transformOrigin: "top",
+  },
+  close: {
+    display: "none",
+    scaleY: 0,
+    transformOrigin: "top",
+  },
+};
+
 const ChatFriendBar = ({ isHistoryChat }: { isHistoryChat: boolean }) => {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+  const settingMenuControls = useAnimationControls();
+
+  useEffect(() => {
+    if (isOpen) {
+      settingMenuControls.start("open");
+    } else {
+      settingMenuControls.start("close");
+    }
+  }, [settingMenuControls, isOpen]);
+
   return (
     <div
       className={
         isHistoryChat
-          ? "flex items-center justify-between border-b border-secondary px-4 py-6 md:pl-8 md:pr-16"
-          : "flex items-center justify-between border-b border-secondary px-4 py-6 md:border-none md:pl-8 md:pr-16"
+          ? "relative flex items-center justify-between border-b border-secondary px-4 py-6 md:pl-8 md:pr-16"
+          : "relative flex items-center justify-between border-b border-secondary px-4 py-6 md:border-none md:pl-8 md:pr-16"
       }
     >
       <button
@@ -26,13 +53,38 @@ const ChatFriendBar = ({ isHistoryChat }: { isHistoryChat: boolean }) => {
           <p className="text-lg text-secondary/85">active 2h</p>
         </div>
       </div>
-      <span
-        className={
-          isHistoryChat
-            ? "icon-[icon-park-solid--setting] block size-7 md:size-8"
-            : "icon-[icon-park-solid--setting] block size-7 md:hidden md:size-8"
-        }
-      ></span>
+      <button
+        onClick={() => setIsOpen((prev) => !prev)}
+        className={isHistoryChat ? "block" : "block md:hidden"}
+      >
+        <span
+          className={
+            isHistoryChat
+              ? "icon-[icon-park-solid--setting] size-7 md:size-8"
+              : "icon-[icon-park-solid--setting] size-7 md:hidden md:size-8"
+          }
+        ></span>
+      </button>
+
+      <motion.div
+        initial="close"
+        variants={settingVariants}
+        animate={settingMenuControls}
+        className="absolute -bottom-28 right-10 space-y-4 border border-secondary bg-background p-4 md:hidden"
+      >
+        <button className="flex items-center gap-2 hover:text-accent">
+          <span className="icon-[material-symbols--delete-outline]"></span>
+          Delete conversation
+        </button>
+        <button className="flex items-center gap-2 hover:text-accent">
+          <span className="icon-[uiw--user-delete]"></span>
+          Delete as friend
+        </button>
+        <button className="flex items-center gap-2 hover:text-accent">
+          <span className="icon-[mingcute--user-add-line]"></span>
+          Add as friend
+        </button>
+      </motion.div>
     </div>
   );
 };
